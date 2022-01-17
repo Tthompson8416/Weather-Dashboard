@@ -12,10 +12,6 @@ header {
     text-align: center;
 }
 
-.col-12 {
-    background-color: rgb(67, 145, 235);
-}
-
 .col-md-2 {
     background-image: linear-gradient(to right, rgb(67, 145, 235), rgb(34, 216, 207));
 }
@@ -25,14 +21,16 @@ header {
 }
 
 .mt-1 {
-color: red;
+    color: red;
+}
+
+
+.col-12 {
+    background-color: rgb(67, 145, 235);
 }
 
 .btn {
     color: white;
     background-color: rgb(67, 145, 235);
 }
-
-.context-menu {cursor: context-menu;
-}
-      
+    
