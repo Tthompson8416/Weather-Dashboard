@@ -1,3 +1,26 @@
 header {
-    color:red;
+        background-image: linear-gradient(to right, rgb(67, 145, 235), rgb(34, 216, 207));
+        color: white;
+      }
+
+#fiveday-header {
+    color: white;
+    text-align: center;
 }
+
+.col-12 {
+    background-color: rgb(67, 145, 235);
+}
+
+.col-md-2 {
+    background-image: linear-gradient(to right, rgb(67, 145, 235), rgb(34, 216, 207));
+}
+.mt-1 {
+color: red;
+}
+
+.btn {
+    color: white;
+    background-color: rgb(67, 145, 235);
+}
+      

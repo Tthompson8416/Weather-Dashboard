@@ -93,6 +93,13 @@ function initPage() {
                             const forecastHumidityEl = document.createElement("p");
                             forecastHumidityEl.innerHTML = "Humidity: " + response.data.list[forecastIndex].main.humidity + "%";
                             forecastEls[i].append(forecastHumidityEl);
+
+                            const forecastWindEl = document.createElement("p");
+                            forecastWindEl.innerHTML = "Wind: " + response.data.list[forecastIndex].main.wind + "MPH";
+                            forecastEls[i].append(forecastWindEl);
+
+
+
                         }
                     })
             });
