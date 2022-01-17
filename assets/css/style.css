@@ -18,6 +18,7 @@ header {
 
 .col-lg-11 {
     border: black 1px solid;
+    
 }
 
 .mt-1 {
@@ -33,4 +34,7 @@ header {
     color: white;
     background-color: rgb(67, 145, 235);
 }
-    
+
+.custom-bg-color {
+    background-color: lightgray;
+}

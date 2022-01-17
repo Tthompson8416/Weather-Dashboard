@@ -130,7 +130,7 @@ function initPage() {
             const historyItem = document.createElement("input");
             historyItem.setAttribute("type", "text");
             historyItem.setAttribute("readonly", true);
-            historyItem.setAttribute("class", "form-control d-block bg-white");
+            historyItem.setAttribute("class", "form-control d-block custom-bg-color");
             historyItem.setAttribute("value", searchHistory[i]);
             historyItem.addEventListener("click", function () {
                 getWeather(historyItem.value);
