@@ -1,3 +1,7 @@
+html * {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 header {
         background-image: linear-gradient(to right, rgb(67, 145, 235), rgb(34, 216, 207));
         color: white;
@@ -15,6 +19,11 @@ header {
 .col-md-2 {
     background-image: linear-gradient(to right, rgb(67, 145, 235), rgb(34, 216, 207));
 }
+
+.col-lg-11 {
+    border: black 1px solid;
+}
+
 .mt-1 {
 color: red;
 }
@@ -22,5 +31,8 @@ color: red;
 .btn {
     color: white;
     background-color: rgb(67, 145, 235);
+}
+
+.context-menu {cursor: context-menu;
 }
       
