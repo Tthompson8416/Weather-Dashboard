@@ -1,40 +1,202 @@
-html * {
+:root {
+    /* Enhanced color palette with your original colors plus new accent options */
+    --primary-blue: rgb(67, 145, 235);
+    --secondary-teal: rgb(34, 216, 207);
+    --dark-text: #2d3436;
+    --light-text: #ffffff;
+    --card-bg: #ffffff;
+    --hover-color: #4895ef;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --gradient: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+  }
+  
+  /* Base Styles */
+  body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-header {
-        background-image: linear-gradient(to right, rgb(67, 145, 235), rgb(34, 216, 207));
-        color: white;
-      }
-
-#fiveday-header {
-    color: white;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: #f8f9fa;
+  }
+  
+  /* Enhanced Header */
+  .weather-header {
+    background-image: var(--gradient);
+    padding: 2rem !important;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .weather-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+  }
+  
+  /* Search Section Improvements */
+  .search-input {
+    border: 2px solid #e9ecef;
+    border-radius: 8px 0 0 8px;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+  }
+  
+  .search-input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 0.2rem rgba(67, 145, 235, 0.25);
+  }
+  
+  .search-button {
+    background-color: var(--primary-blue);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    transition: all 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-1px);
+  }
+  
+  /* Weather Card Enhancements */
+  .weather-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+  }
+  
+  .weather-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .city-name {
+    color: var(--dark-text);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .weather-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .weather-info {
+    background-color: #f8f9fa;
+    padding: 1.25rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+  }
+  
+  .weather-info:hover {
+    background-color: #e9ecef;
+  }
+  
+  .weather-info i {
+    color: var(--primary-blue);
+    font-size: 1.25rem;
+  }
+  
+  /* 5-Day Forecast Improvements */
+  #fiveday-header {
+    color: var(--dark-text);
+    margin: 2rem 0;
     text-align: center;
-}
-
-.col-md-2 {
-    background-image: linear-gradient(to right, rgb(67, 145, 235), rgb(34, 216, 207));
-}
-
-.col-lg-11 {
-    border: black 1px solid;
-    
-}
-
-.mt-1 {
-    color: red;
-}
-
-
-.col-12 {
-    background-color: rgb(67, 145, 235);
-}
-
-.btn {
+  }
+  
+  .forecast {
+    background-image: var(--gradient);
+    border-radius: 12px;
+    padding: 1.5rem;
+    color: var(--light-text);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .forecast:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  /* History Section Enhancement */
+  .history-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  
+  .history-container button {
+    background-color: #f8f9fa;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: left;
+    transition: all 0.3s ease;
+    color: var(--dark-text);
+  }
+  
+  .history-container button:hover {
+    background-color: var(--primary-blue);
+    color: var(--light-text);
+    transform: translateY(-1px);
+  }
+  
+  #clear-history {
+    background-color: #dc3545;
     color: white;
-    background-color: rgb(67, 145, 235);
-}
-
-.custom-bg-color {
-    background-color: lightgray;
-}
+    transition: all 0.3s ease;
+  }
+  
+  #clear-history:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+  }
+  
+  /* Responsive Design Improvements */
+  @media (max-width: 768px) {
+    .weather-details {
+      grid-template-columns: 1fr;
+    }
+    
+    .forecast {
+      margin-bottom: 1rem;
+    }
+    
+    .city-name {
+      font-size: 1.5rem;
+    }
+    
+    .search-input,
+    .search-button {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .weather-header {
+      padding: 1.5rem !important;
+    }
+    
+    .weather-info {
+      padding: 1rem;
+    }
+  }

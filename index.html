@@ -20,87 +20,100 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
-  <body>
-    <header class="container-fluid text-center text-black p-2">
-      <h1>Weather Dashboard</h1>
+  <body class="bg-light">
+    <header class="container-fluid text-center text-white p-4 weather-header">
+      <h1 class="display-4">Weather Dashboard</h1>
     </header>
 
     <main class="container-fluid">
       <div class="row">
-        <aside class="col-lg-3 bg-light">
-          <form id="search-form">
-            <h3 class="mt-1">Search for a City:</h3>
-            <div class="input-group mb-3">
+        <aside class="col-lg-3 p-4">
+          <form id="search-form" class="mb-4">
+            <h3 class="text-primary mb-3">Search for a City:</h3>
+            <div class="input-group shadow-sm">
               <input
                 id="enter-city"
                 type="text"
-                class="form-control"
+                class="form-control search-input"
                 placeholder="Enter a city"
                 aria-label="Enter a city"
               />
               <div class="input-group-append">
                 <button
-                  class="btn btn-primary"
+                  class="btn search-button"
                   type="button"
                   id="search-button"
                   aria-label="Search for city"
                 >
-                  Search
+                  <i class="fas fa-search"></i>
                 </button>
               </div>
             </div>
 
             <button
               id="clear-history"
-              class="btn btn-secondary mb-3"
+              class="btn btn-secondary mb-3 w-100"
               type="button"
             >
-              Clear History
+              <i class="fas fa-trash-alt mr-2"></i>Clear History
             </button>
           </form>
 
-          <form id="history"></form>
+          <div id="history" class="history-container"></div>
         </aside>
+
         <section class="col-lg-9">
           <div class="row mr-0">
-            <div class="col-lg-11 card m-3 d-none" id="today-weather">
+            <div
+              class="col-lg-11 card m-3 d-none weather-card"
+              id="today-weather"
+            >
               <div class="card-body">
-                <h3 id="city-name" class="city-name align-middle"></h3>
-                <img id="current-pic" alt="" />
-                <p id="temperature"></p>
-                <p id="humidity"></p>
-                <p id="wind-speed"></p>
-                <p id="UV-index"></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <h3 id="city-name" class="city-name mb-0"></h3>
+                  <img id="current-pic" alt="Weather condtion" class="weather-icon" />
+                </div>
+                <div class="weather-details mt-4">
+                  <p id="temperature" class="weather-info">
+                    <i class="fas fa-thermometer-half mr-2"></i>
+                    <span class="weather-text"></span>
+                  </p>
+                  <p id="humidity" class="weather-info">
+                    <i class="fas fa-tint mr-2"></i>
+                    <span class="weather-text"></span>
+                  </p>
+                  <p id="wind-speed" class="weather-info">
+                    <i class="fas fa-wind mr-2"></i>
+                    <span class="weather-text"></span>
+                  </p>
+                  <p id="UV-index" class="weather-info">
+                    <i class="fas fa-sun mr-2"></i>
+                    <span class="weather-text"></span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+
+          <!-- 5 day forcast -->
           <div class="row d-none" id="fiveday-header">
             <div class="col-12">
-              <h3>5-Day Forecast</h3>
+              <h3 class="forecast-title">5-Day Forecast</h3>
             </div>
           </div>
-          <div class="row">
-            <div
-              class="col-md-2 forecast bg-primary text-white m-2 rounded"
-            ></div>
-            <div
-              class="col-md-2 forecast bg-primary text-white m-2 rounded"
-            ></div>
-            <div
-              class="col-md-2 forecast bg-primary text-white m-2 rounded"
-            ></div>
-            <div
-              class="col-md-2 forecast bg-primary text-white m-2 rounded"
-            ></div>
-            <div
-              class="col-md-2 forecast bg-primary text-white m-2 rounded"
-            ></div>
+          <div class="row justify-content-between px-3">
+            <div class="col-md-2 forecast m-2 rounded"></div>
+            <div class="col-md-2 forecast m-2 rounded"></div>
+            <div class="col-md-2 forecast m-2 rounded"></div>
+            <div class="col-md-2 forecast m-2 rounded"></div>
+            <div class="col-md-2 forecast m-2 rounded"></div>
           </div>
         </section>
       </div>
     </main>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/config.js"></script>
     <script src="./assets/js/weather.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
