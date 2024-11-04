@@ -1,5 +1,5 @@
 function initPage() {
-    // DOM Elements
+    // DOM elements
     const cityEl = document.getElementById("enter-city");
     const searchEl = document.getElementById("search-button");
     const clearEl = document.getElementById("clear-history");
@@ -31,7 +31,7 @@ function initPage() {
         };
     }
 
-    // Updated loading state handler to match new styles
+    // loading state handler 
     function setLoadingState(isLoading) {
         const searchButton = document.getElementById("search-button");
         if (isLoading) {
@@ -45,7 +45,7 @@ function initPage() {
         }
     }
 
-    // Updated error handling to match new styles
+    // Error handling 
     function handleError(error, message = "An error occurred. Please try again.") {
         console.error("Error:", error);
         const errorDiv = document.createElement("div");
@@ -86,7 +86,6 @@ function initPage() {
             
             todayweatherEl.classList.remove("d-none");
             
-            // Updated to match new HTML structure
             const formattedDate = formatDate(response.data.dt);
             nameEl.innerHTML = `${response.data.name} (${formattedDate})`;
             
@@ -94,7 +93,7 @@ function initPage() {
             currentPicEl.setAttribute("src", `https://openweathermap.org/img/wn/${weatherPic}@2x.png`);
             currentPicEl.setAttribute("alt", response.data.weather[0].description);
             
-            // Updated weather info display to match new structure
+            // Weather info display to match new structure
             currentTempEl.innerHTML = `
                 <i class="fas fa-thermometer-half mr-2"></i>
                 <span class="weather-text">Temperature: ${k2f(response.data.main.temp)}°F</span>
@@ -121,7 +120,7 @@ function initPage() {
                 </span>
             `;
 
-            // Updated forecast display
+            // Forecast display
             const forecastQueryURL = `https://api.openweathermap.org/data/2.5/forecast?id=${response.data.id}&appid=${APIKey}`;
             const forecastResponse = await axios.get(forecastQueryURL);
             
@@ -154,7 +153,7 @@ function initPage() {
         }
     }
 
-    // Updated search history rendering to match new styles
+   
     function renderSearchHistory() {
         historyEl.innerHTML = "";
         searchHistory.forEach(city => {
@@ -170,7 +169,7 @@ function initPage() {
         return Math.round((K - 273.15) * 1.8 + 32);
     }
 
-    // Event Listeners
+    // Event listeners
     searchEl.addEventListener("click", debounce(() => {
         const searchTerm = cityEl.value.trim();
         if (searchTerm) {
